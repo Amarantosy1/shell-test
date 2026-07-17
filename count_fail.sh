@@ -1,0 +1,9 @@
+#!/bin/bash
+count=1
+while ./test_fail.sh >stdout.log 2>stderr.log; do
+	((count ++))
+done
+
+echo "第 $count 次运行失败"
+cat stdout.log
+cat stderr.log
